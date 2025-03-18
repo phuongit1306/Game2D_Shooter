@@ -3,15 +3,22 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     private float rotateOffset = 180f;
+    [SerializeField] private Transform firePos;
+    [SerializeField] private GameObject bulletPrfs;
+    [SerializeField] private float shotDelaytime = 0.15f;
+    private float nextShot;
+    [SerializeField] private int maxAmmo = 30;
+    public int currentAmmo;
     void Start()
     {
-        
+        currentAmmo = maxAmmo;
     }
 
 
     void Update()
     {
         RotateGun();
+        Shoot();
     }
 
     void RotateGun()
@@ -32,6 +39,16 @@ public class Gun : MonoBehaviour
         else  
         {
             transform.localScale = new Vector3(1,-1,1);
+        }
+    }
+
+    void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0) && currentAmmo > 0 && Time.time > nextShot)
+        {
+            nextShot = Time.time + shotDelaytime;
+            Instantiate(bulletPrfs, firePos.position, firePos.rotation);
+            currentAmmo--;
         }
     }
     

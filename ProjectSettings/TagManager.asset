@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1467193391
+    locked: 0
+  - name: Gun
+    uniqueID: 2891158805
+    locked: 0
+  - name: Bullet
+    uniqueID: 2336922831
     locked: 0
   m_RenderingLayers:
   - Default
