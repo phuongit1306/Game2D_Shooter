@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
     void Start()
     {
         
@@ -35,6 +34,7 @@ public class Player : MonoBehaviour
         Vector2 playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.linearVelocity = playerInput.normalized * moveSpeed;
 
+        //flip
         if (playerInput.x < 0)
         {
             flipPlayer.flipX = true;
@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
         {
             flipPlayer.flipX = false;
         }
+        
         //Player Run
         if(playerInput != Vector2.zero)
         {
