@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     {
         RotateGun();
         Shoot();
+        ReloadBullet();
     }
 
     void RotateGun()
@@ -51,5 +52,12 @@ public class Gun : MonoBehaviour
             currentAmmo--;
         }
     }
-    
+    void ReloadBullet()
+    {
+        if(Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+        }
+    }
+
 }
