@@ -26,9 +26,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -39,17 +39,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 3500106559
+    locked: 0
+  - name: Grass
+    uniqueID: 3847288759
+    locked: 0
+  - name: Border
+    uniqueID: 2902228617
+    locked: 0
+  - name: Trees
+    uniqueID: 1945085341
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Player
-    uniqueID: 1467193391
-    locked: 0
-  - name: Gun
-    uniqueID: 2891158805
+    uniqueID: 2425651459
     locked: 0
   - name: Bullet
-    uniqueID: 2336922831
+    uniqueID: 4189426099
+    locked: 0
+  - name: Gun
+    uniqueID: 4250941897
     locked: 0
   m_RenderingLayers:
   - Default
