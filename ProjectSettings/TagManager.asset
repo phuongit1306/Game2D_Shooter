@@ -67,5 +67,8 @@ TagManager:
   - name: Enemy
     uniqueID: 1336814005
     locked: 0
+  - name: HP
+    uniqueID: 1329853629
+    locked: 0
   m_RenderingLayers:
   - Default
