@@ -51,5 +51,16 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isRun", false);
         }
-    }   
+    }
+
+    public void TakeDmg()
+    {
+        Die();
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }

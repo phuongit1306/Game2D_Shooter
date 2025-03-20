@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
 
-    [SerializeField] protected float enemyMoveSpeed = 1f;
+    [SerializeField] protected float enemyMoveSpeed = 3f;
     protected Player player;
     protected virtual void Start()
     {
@@ -28,5 +28,15 @@ public abstract class Enemy : MonoBehaviour
         {
             transform.localScale = new Vector3(player.transform.position.x < transform.position.x ? -1 : 1, 1, 1);
         }
+    }
+
+    public virtual void TakeDmg()
+    {
+        Die();
+    }
+
+    public virtual void Die()
+    {
+        Destroy(gameObject);
     }
 }
