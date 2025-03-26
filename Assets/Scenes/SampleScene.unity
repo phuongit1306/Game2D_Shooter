@@ -44595,6 +44595,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1243006210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5790917828915205983, guid: df168b24e9e281b46b41a192116d8088,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117583450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1274105927 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1821144070122301962, guid: df168b24e9e281b46b41a192116d8088,
@@ -45089,6 +45101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 3
+  maxHp: 100
+  hpBar: {fileID: 1243006210}
 --- !u!95 &1739796776
 Animator:
   serializedVersion: 7
@@ -45274,6 +45288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.96981126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790917828915205983, guid: df168b24e9e281b46b41a192116d8088,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6120810160287121299, guid: df168b24e9e281b46b41a192116d8088,
         type: 3}
