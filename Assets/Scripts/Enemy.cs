@@ -51,7 +51,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }

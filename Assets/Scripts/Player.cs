@@ -73,12 +73,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Die()
+    private void Die()
     {
         Destroy(gameObject);
     }
 
-    protected void UpdateHpBar()
+    private void UpdateHpBar()
     {
         if(hpBar != null)
         {
