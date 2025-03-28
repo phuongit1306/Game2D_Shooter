@@ -8,11 +8,11 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] protected float enemyMoveSpeed = 3f;
     protected Player player;
-
     [SerializeField] protected float maxHp = 100f;
     protected float currentHp;
-
     [SerializeField] private Image hpBar;
+    [SerializeField] protected float enterDmg = 10f;
+    [SerializeField] protected float stayDmg = 1f;
     protected virtual void Start()
     {
         player = FindAnyObjectByType<Player>();

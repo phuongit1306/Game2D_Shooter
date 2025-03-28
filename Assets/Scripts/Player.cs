@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -6,6 +8,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer flipPlayer;
     private Animator animator;
+    [SerializeField] private float maxHp = 100f;
+    private float currentHp;
+    [SerializeField] private Image hpBar;
+
+
+
 
     private void Awake()
     {
@@ -16,7 +24,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        currentHp = maxHp;
+        UpdateHpBar();
     }
 
     void Update()
@@ -53,9 +62,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDmg()
+    public void TakeDmg(float dmg)
     {
-        Die();
+        currentHp -= dmg;
+        currentHp = Math.Max(currentHp, 0);
+        UpdateHpBar();
+        if (currentHp <= 0)
+        {
+            Die();
+        }
     }
 
     public void Die()
@@ -63,4 +78,11 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
+    protected void UpdateHpBar()
+    {
+        if(hpBar != null)
+        {
+            hpBar.fillAmount = currentHp / maxHp;
+        }
+    }
 }

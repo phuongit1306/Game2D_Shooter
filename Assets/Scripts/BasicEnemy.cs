@@ -6,7 +6,20 @@ public class BasicEnemy : Enemy
     {
         if(collision.CompareTag("Player"))
         {
-            player.TakeDmg();
+            if (player != null)
+            {
+                player.TakeDmg(enterDmg);
+            }
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            if (player != null)
+            {
+                player.TakeDmg(stayDmg);
+            }
         }
     }
 }
