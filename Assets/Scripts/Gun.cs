@@ -14,7 +14,6 @@ public class Gun : MonoBehaviour
         currentAmmo = maxAmmo;
     }
 
-
     void Update()
     {
         RotateGun();

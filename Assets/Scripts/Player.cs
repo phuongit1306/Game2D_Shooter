@@ -12,9 +12,6 @@ public class Player : MonoBehaviour
     private float currentHp;
     [SerializeField] private Image hpBar;
 
-
-
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -70,6 +67,16 @@ public class Player : MonoBehaviour
         if (currentHp <= 0)
         {
             Die();
+        }
+    }
+
+    public void Heal(float healValue)
+    {
+        if(currentHp < maxHp)
+        {
+            currentHp += healValue;
+            currentHp = Math.Min(currentHp,maxHp);
+            UpdateHpBar();
         }
     }
 

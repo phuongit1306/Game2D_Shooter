@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
 {
-
     [SerializeField] protected float enemyMoveSpeed = 3f;
     protected Player player;
     [SerializeField] protected float maxHp = 100f;
