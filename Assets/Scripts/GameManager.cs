@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
@@ -9,11 +10,18 @@ public class GameManager : MonoBehaviour
     private bool bossCalled = false;
     [SerializeField] private Image energyBar;
     [SerializeField] GameObject gameUi;
+
+    [SerializeField] private GameObject red;
+
+    [SerializeField] private CinemachineCamera cam;
     void Start()
     {
         currentEnergy = 0;
         UpdateEnergyBar();
         boss.SetActive(false);
+
+        cam.Lens.OrthographicSize = 5f;
+        red.SetActive(false);
     }
 
     void Update()
@@ -39,6 +47,9 @@ public class GameManager : MonoBehaviour
         boss.SetActive(true);
         enemySpaner.SetActive(false);
         gameUi.SetActive(false);
+        
+        cam.Lens.OrthographicSize = 10f;
+        red.SetActive(true);
     }
     private void UpdateEnergyBar()
     {
