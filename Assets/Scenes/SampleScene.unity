@@ -44092,7 +44092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &938662937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52945,6 +52945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ca0cacd559a9743b631f33607f7e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1922836517}
 --- !u!1 &1682932480
 GameObject:
   m_ObjectHideFlags: 0
@@ -52978,17 +52979,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d7962746008ab478899d0bab9acffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMoveSpeed: 3
-  maxHp: 500
+  enemyMoveSpeed: 2.5
+  maxHp: 300
   hpBar: {fileID: 921295455}
   enterDmg: 5
-  stayDmg: 1
+  stayDmg: 0.5
   bulletPrefabs: {fileID: 2074709216148159337, guid: 5a399c92a7bfee94bb54d963461ee2fb,
     type: 3}
   firePoint: {fileID: 2009952192}
   speedNormalBullets: 15
   speedCircleBullets: 10
-  hpValue: 100
+  hpValue: 50
   miniEnemy: {fileID: 7758778789019049604, guid: 0d9e49246dca3eb47b5b61f62b0964f1,
     type: 3}
   skillCooldown: 2
@@ -53154,7 +53155,7 @@ Transform:
   m_GameObject: {fileID: 1682932480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.36, y: 0, z: 0}
+  m_LocalPosition: {x: 0.4, y: 12.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53335,6 +53336,54 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1007828222}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1922836516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922836518}
+  - component: {fileID: 1922836517}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1922836517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922836516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f07021144f768478245d70e6641667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEnergy: 0
+  energyThreshold: 2
+  boss: {fileID: 1682932480}
+  enemySpaner: {fileID: 938662936}
+--- !u!4 &1922836518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922836516}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1933882665
 GameObject:
   m_ObjectHideFlags: 0
@@ -53621,3 +53670,4 @@ SceneRoots:
   - {fileID: 1075488368}
   - {fileID: 938662938}
   - {fileID: 1682932486}
+  - {fileID: 1922836518}
