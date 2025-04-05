@@ -69,6 +69,9 @@ TagManager:
   - name: Enemy
     uniqueID: 1336814005
     locked: 0
+  - name: Blood
+    uniqueID: 2725392889
+    locked: 0
   - name: HP
     uniqueID: 1329853629
     locked: 0
