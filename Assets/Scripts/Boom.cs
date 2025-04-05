@@ -19,6 +19,5 @@ public class Boom : MonoBehaviour
     public void DestroyBoom()
     {
         Destroy(gameObject);
-        DestroyBoom();
     }
 }
