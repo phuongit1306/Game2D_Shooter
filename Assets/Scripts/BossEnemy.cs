@@ -5,12 +5,14 @@ public class BossEnemy : Enemy
     [SerializeField] private GameObject bulletPrefabs;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float speedNormalBullets = 20f;
+    [SerializeField] private float speedCircleBullets = 10f;
+    [SerializeField] private float hpValue = 100f;
     protected override void Update()
     {
         base.Update();
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            ShootNormalBullets();
+            Heal(hpValue);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,11 +43,21 @@ public class BossEnemy : Enemy
     }
     private void ShootCircleBullets()
     {
-
+        const int bulletCount = 12;
+        float angleStep = 360f / bulletCount;
+        for (int i =0; i<bulletCount;i++)
+        {
+            float angle = i * angleStep;
+            Vector3 bulletDirection = new Vector3(Mathf.Cos(Mathf.Deg2Rad*angle), Mathf.Sin(Mathf.Deg2Rad*angle), 0);
+            GameObject bullet = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
+            EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
+            enemyBullet.SetMovementDirection(bulletDirection* speedCircleBullets);
+        }
     }
-    private void Heal()
+    private void Heal(float hpAmount)
     {
-
+        currentHp = Mathf.Min(currentHp + hpAmount, maxHp);
+        UpdateHpBar();
     }
     private void CreateMiniEnemy()
     {
