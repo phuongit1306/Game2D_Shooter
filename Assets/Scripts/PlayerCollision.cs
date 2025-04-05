@@ -9,5 +9,10 @@ public class PlayerCollision : MonoBehaviour
             Player player = GetComponent<Player>();
             player.TakeDmg(10f);
         }
+        else if (collision.CompareTag("End"))
+        {
+            Debug.Log("Win CM Game r!!!");
+            Destroy(collision.gameObject);
+        }
     }
 }

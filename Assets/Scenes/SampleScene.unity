@@ -52743,6 +52743,7 @@ GameObject:
   - component: {fileID: 1672750525}
   - component: {fileID: 1672750529}
   - component: {fileID: 1672750530}
+  - component: {fileID: 1672750531}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -52932,6 +52933,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1672750531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672750524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ca0cacd559a9743b631f33607f7e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682932480
 GameObject:
   m_ObjectHideFlags: 0
@@ -52966,7 +52979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 3
-  maxHp: 200
+  maxHp: 500
   hpBar: {fileID: 921295455}
   enterDmg: 5
   stayDmg: 1
@@ -52977,6 +52990,9 @@ MonoBehaviour:
   speedCircleBullets: 10
   hpValue: 100
   miniEnemy: {fileID: 7758778789019049604, guid: 0d9e49246dca3eb47b5b61f62b0964f1,
+    type: 3}
+  skillCooldown: 2
+  endGamePrefabs: {fileID: 4345372430380475170, guid: 4c816d0176d43014995496ff75d1a437,
     type: 3}
 --- !u!95 &1682932482
 Animator:
