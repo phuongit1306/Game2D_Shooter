@@ -52974,6 +52974,10 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 2009952192}
   speedNormalBullets: 15
+  speedCircleBullets: 10
+  hpValue: 100
+  miniEnemy: {fileID: 7758778789019049604, guid: 0d9e49246dca3eb47b5b61f62b0964f1,
+    type: 3}
 --- !u!95 &1682932482
 Animator:
   serializedVersion: 7

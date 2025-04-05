@@ -7,12 +7,13 @@ public class BossEnemy : Enemy
     [SerializeField] private float speedNormalBullets = 20f;
     [SerializeField] private float speedCircleBullets = 10f;
     [SerializeField] private float hpValue = 100f;
+    [SerializeField] private GameObject miniEnemy;
     protected override void Update()
     {
         base.Update();
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Heal(hpValue);
+            CreateMiniEnemy();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,7 +62,7 @@ public class BossEnemy : Enemy
     }
     private void CreateMiniEnemy()
     {
-
+        Instantiate(miniEnemy, transform.position, Quaternion.identity);
     }
     private void TeleToPlayer()
     {
