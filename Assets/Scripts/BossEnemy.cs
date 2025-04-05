@@ -8,12 +8,14 @@ public class BossEnemy : Enemy
     [SerializeField] private float speedCircleBullets = 10f;
     [SerializeField] private float hpValue = 100f;
     [SerializeField] private GameObject miniEnemy;
+    [SerializeField] private float skillCooldown = 2f;
+    private float nextSkillTime = 0f;
     protected override void Update()
     {
         base.Update();
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Time.time >= nextSkillTime)
         {
-            CreateMiniEnemy();
+            UseSkill();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +68,37 @@ public class BossEnemy : Enemy
     }
     private void TeleToPlayer()
     {
+        if(player != null)
+        {
+            transform.position = player.transform.position;
+        }
+    }
+    private void ChooseRandomSkill()
+    {
+        int randomSkill = Random.Range(0, 5);
+        switch(randomSkill)
+        {
+            case 0:
+                ShootNormalBullets();
+                break;
+            case 1:
+                ShootCircleBullets();
+                break;
+            case 2:
+                Heal(hpValue);
+                break;
 
+            case 3:
+                CreateMiniEnemy();
+                break;
+            case 4:
+                TeleToPlayer();
+                break;
+        }
+    }
+    private void UseSkill()
+    {
+        nextSkillTime = Time.time + skillCooldown;
+        ChooseRandomSkill();
     }
 }
